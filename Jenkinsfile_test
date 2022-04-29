@@ -7,9 +7,20 @@ pipeline{
             steps{
                 script{
                     sh(script:"python ./test.py > result")
-                    echo result
+                    cat result
                 }
             }
         }
+        stage{
+            steps{
+                if (result == 'True'){
+                    echo 'Test successfully'
+                }else{
+                    echo 'Test fail'
+                }
+            }
+        }
+       
     }
+    
 }
