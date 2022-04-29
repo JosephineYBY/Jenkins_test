@@ -1,5 +1,4 @@
 def result
-def log
 
 pipeline{
     agent any
@@ -7,9 +6,7 @@ pipeline{
         stage('Test'){
             steps{
                 script{
-                    log = sh(script:"python ./test.py", returnStdout:true).trim()
-                    result = ($(echo log))
-                    echo ${result[1]}
+                    result = sh(script:"python ./test.py", returnStdout:true).trim()
                 }
             }
         }
