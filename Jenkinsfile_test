@@ -6,7 +6,8 @@ pipeline{
         stage('Test'){
             steps{
                 script{
-                    result = sh(script:"python ./test.py", returnStdout:true).trim()
+                    result = sh(script:"python ./test.py", returnStdout:true)
+                    echo $result
                 }
             }
         }
