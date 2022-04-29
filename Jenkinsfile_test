@@ -13,11 +13,13 @@ pipeline{
         }
         stage('post'){
             steps{
-                if (result == 'True'){
-                    echo 'Test successfully'
-                }else{
-                    echo 'Test fail'
-                }
+                script{
+                        if (result == 'True'){
+                            echo 'Test successfully'
+                        }else{
+                            echo 'Test fail'
+                        }
+                    }
             }
         }
        
