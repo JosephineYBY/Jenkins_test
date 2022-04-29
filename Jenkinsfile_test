@@ -7,8 +7,8 @@ pipeline{
         stage('Test'){
             steps{
                 script{
-                    [log, result] = sh(script:"python ./test.py", returnStdout:true).trim()
-                    echo result
+                    result = sh(script:"python ./test.py", returnStdout:true).trim()
+                    echo sys.argv[1]
                 }
             }
         }
