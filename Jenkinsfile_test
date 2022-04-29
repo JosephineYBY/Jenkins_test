@@ -11,7 +11,7 @@ pipeline{
                 }
             }
         }
-        stage{
+        stage('post'){
             steps{
                 if (result == 'True'){
                     echo 'Test successfully'
