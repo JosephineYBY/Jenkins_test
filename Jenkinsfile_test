@@ -1,0 +1,15 @@
+def result
+
+pipeline{
+    agent any
+    stages{
+        stage('Test'){
+            steps{
+                script{
+                    result = sh(script:"python ./test.py", returnStdout:true).trim()
+                    echo result
+                }
+            }
+        }
+    }
+}
